@@ -1,0 +1,3 @@
+# javaExercises
+Java Excercises
+# kata
