@@ -1,26 +1,63 @@
 package com.exercise.chapterThree;
 
-public class HealthProfile {
+import com.exercise.chapterTwo.BodyMassIndex;
 
-    public void setGender(boolean gender) {
+import java.util.Scanner;
+
+public class HealthProfile {
+    Date date = new Date(0, 0, 0);
+    HeartRate heartRate = new HeartRate("", "", 0, 0, 0);
+    BodyMassIndex bodyMassIndex = new BodyMassIndex(0, 0);
+
+    private String gender;
+
+    public HealthProfile(String firstName, String lastName, String gender, int day, int month, int year, double height, double weight){
+        this.gender = gender;
+        heartRate.setFirstName(firstName);
+        heartRate.setLastName(lastName);
+        date.setDay(day);
+        date.setMonth(month);
+        date.setYear(year);
+        bodyMassIndex.setWeight(weight);
+        bodyMassIndex.setHeight(height);
+    }
+
+    public void setGender(String gender) {
+       this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public static void main(String[] args) {
+        HealthProfile profile = new HealthProfile("", "", "", 0, 0, 0, 0, 0);
+        Scanner input = new Scanner(System.in);
+        Date date = new Date(0, 0, 0);
+        HeartRate heartRate = new HeartRate("", "", 0, 0, 0);
+        BodyMassIndex bodyMassIndex = new BodyMassIndex(0, 0);
+
+        System.out.println("Enter first name: ");
+        heartRate.setFirstName(input.nextLine());
+
+        System.out.println("Enter last name: ");
+        heartRate.setLastName(input.nextLine());
+
+        System.out.println("Enter day of birth : ");
+        date.setDay(input.nextInt());
+
+        System.out.println("Enter month of birth: ");
+        date.setMonth(input.nextInt());
+
+        System.out.println("Enter year of birth: ");
+        date.setYear(input.nextInt());
+
+        heartRate.calculateAge(date.getDay(), date.getMonth(), date.getYear());
+
+        System.out.println("Enter exercise rate in percentage (e.g 55)");
+        heartRate.setExerciseRate(input.nextDouble());
+
+
 
     }
 }
-//(Computerization of Health Records) A health-care issue that has been in the news lately is
-//        the computerization of health records. This possibility is being approached cautiously because of
-//        sensitive privacy and security concerns, among others. [We address such concerns in later exercises.]
-//        Computerizing health records could make it easier for patients to share their health profiles and histories among
-//        their various health-care professionals. This could improve the quality of health care,
-//        help avoid drug conflicts and erroneous drug prescriptions, reduce costs and, in emergencies, could
-//        save lives. In this exercise, you’ll design a “starter” HealthProfile class for a person. The class attributes
-//        should include the person’s first name, last name, gender, date of birth
-//        (consisting of separate attributes for the month, day and year of birth),
-//        height (in inches) and weight (in pounds). Your class
-//should have a constructor that receives this data. For each attribute, provide set and get methods.
-//The class also should include methods that calculate and return the user’s age in years, maximum
-//heart rate and target-heart-rate range (see Exercise 3.16), and body mass index (BMI; see
-//Exercise 2.33). Write a Java app that prompts for the person’s information, instantiates an object of
-//class HealthProfile for that person and prints the information from that object—including the person’s first name, l
-// ast name, gender, date of birth, height and weight—then calculates and prints the
-//person’s age in years, BMI, maximum heart rate and target-heart-rate range. It should also display
-//the BMI values chart from Exercise 2.33.

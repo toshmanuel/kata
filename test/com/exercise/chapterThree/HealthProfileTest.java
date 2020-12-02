@@ -14,7 +14,7 @@ class HealthProfileTest {
     @BeforeEach
     void setUp() {
         System.out.println("Starting test >>>>>>>>>>");
-        profile = new HealthProfile();
+        profile = new HealthProfile("","","", 0, 0, 0, 0, 0);
     }
 
     @AfterEach
@@ -24,7 +24,7 @@ class HealthProfileTest {
     }
     @Test
     void testIfGenderCanBeSet(){
-        profile.setGender(0);
-        assertEquals("Male", profile.getGender());
+        profile.setGender("MALE");
+        assertEquals("MALE", profile.getGender());
     }
 }
