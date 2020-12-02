@@ -2,6 +2,9 @@ package com.exercise.chapterThree;
 
 public class HealthProfile {
 
+    public void setGender(boolean gender) {
+
+    }
 }
 //(Computerization of Health Records) A health-care issue that has been in the news lately is
 //        the computerization of health records. This possibility is being approached cautiously because of
