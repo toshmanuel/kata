@@ -1,7 +1,5 @@
 package com.exercise.chapterThree;
 
-import java.util.Scanner;
-
 public class Date {
 
     private int day;

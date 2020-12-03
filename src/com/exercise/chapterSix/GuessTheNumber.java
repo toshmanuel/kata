@@ -29,32 +29,22 @@ public class GuessTheNumber {
                 }
             }
         }
-
-
-//        while(rangeOfNumber < realNumber) {
-//            System.out.println("too low, try again ");
-//        }
-//        while (rangeOfNumber > realNumber ){
-//            System.out.println("too high, try again ");
-//        }
-//        while( rangeOfNumber == realNumber ){
-//            System.out.println("Congratulations you got it right ");
-//            rangeOfNumber = realNumber;
-//        }
     }
     public void setGuessNumber(Scanner input) {
         realNumber = input.nextInt();
-        for (; realNumber > -1; realNumber++) {
-            if (rangeOfNumber > realNumber) {
+        while(realNumber != rangeOfNumber){
+            if (rangeOfNumber < realNumber) {
                 System.out.println("too low, try again ");
+                realNumber = input.nextInt();
             } else {
-                if (rangeOfNumber < realNumber) {
+                if (rangeOfNumber > realNumber) {
                     System.out.println("too high try again");
                     realNumber = input.nextInt();
                 } else {
                     System.out.println("Congratulations");
                 }
             }
+
         }
     }
 
