@@ -31,9 +31,6 @@ public class HeartRate {
     public void calculateAge(int day, int month, int year){
         Date date = new Date(month, day, year);
 
-//        date.setYear(year);
-//        date.setDay(day);
-//        date.setMonth(month);
         LocalDate dob = LocalDate.of(date.getYear(), date.getMonth(), date.getDay());
         LocalDate now = LocalDate.now();
         Period age1 = Period.between(dob, now);

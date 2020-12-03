@@ -31,7 +31,7 @@ public class HealthProfile {
     }
 
     public static void main(String[] args) {
-        HealthProfile profile = new HealthProfile("", "", "", 0, 0, 0, 0, 0);
+        HealthProfile profile = new HealthProfile("", "", "", 1, 1, 1900, 0, 0);
         Scanner input = new Scanner(System.in);
         Date date = new Date(0, 0, 0);
         HeartRate heartRate = new HeartRate("", "", 0, 0, 0);
@@ -57,7 +57,22 @@ public class HealthProfile {
         System.out.println("Enter exercise rate in percentage (e.g 55)");
         heartRate.setExerciseRate(input.nextDouble());
 
+        System.out.println("Enter height in metres");
+        bodyMassIndex.setHeight(input.nextDouble());
 
+        System.out.println("Enter weight in Kilograms");
+        bodyMassIndex.setWeight(input.nextDouble());
 
+        System.out.printf("Name is: %5s %5s%n", heartRate.getFirstName(), heartRate.getLastName());
+
+        System.out.printf("Date of Birth is %s%n", date.toString());
+
+        System.out.printf("Age is: %d%n", heartRate.getAge());
+
+        System.out.printf("Maximum heart rate is: %d%n", heartRate.maxHeartRate());
+
+        System.out.printf("Target heart rate is: %.2f%n", heartRate.targetHeartRate());
+
+        System.out.printf("BMI value is: %.2f%n", bodyMassIndex.bmi());
     }
 }
