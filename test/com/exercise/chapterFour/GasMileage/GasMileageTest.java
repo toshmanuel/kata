@@ -44,7 +44,7 @@ class GasMileageTest {
     void testToCheckTheResultOfTheMilesPerGallonObtainedForEachTrip(){
         gasMileage.setGallons(2);
         gasMileage.setDistances(13);
-        assertEquals(13/2, gasMileage.distancePerGallon());
+        assertEquals(6.5, gasMileage.distancePerGallon());
         System.out.println(gasMileage.distancePerGallon());
     }
     @Test

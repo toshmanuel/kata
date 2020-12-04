@@ -29,10 +29,9 @@ public class GasMileage {
     }
 
     public double distancePerGallon() {
-        return distance / gallons;
+        return distance / (gallons * 1.0);
     }
     public void calculateAverage(){
-//        int counter = 1;
         while(distance != -1){
             distance = Integer.parseInt(JOptionPane.showInputDialog("Enter Distance Cover in miles"));
             gallons = Integer.parseInt(JOptionPane.showInputDialog("Enter amount of gallon used for the distance travelled"));
