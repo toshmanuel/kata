@@ -53,7 +53,12 @@ class GasMileageTest {
         gasMileage.setGallons(3);
         assertEquals(0, gasMileage.distancePerGallon());
         System.out.println(gasMileage.distancePerGallon());
-
+    }
+    @Test
+    void testToCountTheNumbersOfUserInput(){
+        gasMileage.calculateAverage();
+        assertEquals(-1,gasMileage.getDistance());
+        System.out.println(gasMileage.getDistance());
     }
 }
 //        Drivers are concerned with the mileage their automobiles get. One driver has
