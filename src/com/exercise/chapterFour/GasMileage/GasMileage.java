@@ -26,4 +26,7 @@ public class GasMileage {
         return gallons;
     }
 
+    public double distancePerGallon() {
+        return distance / gallons;
+    }
 }
