@@ -5,6 +5,7 @@ import javax.swing.*;
 public class GasMileage {
     private int distance;
     private int gallons;
+    private double average;
 
     public void setDistances(int distance) {
         if(distance < 0){
@@ -32,9 +33,25 @@ public class GasMileage {
         return distance / (gallons * 1.0);
     }
     public void calculateAverage(){
-        while(distance != -1){
-            distance = Integer.parseInt(JOptionPane.showInputDialog("Enter Distance Cover in miles"));
-            gallons = Integer.parseInt(JOptionPane.showInputDialog("Enter amount of gallon used for the distance travelled"));
+
+        int counter = 0;
+        double outAverage =0;
+
+        distance = Integer.parseInt(JOptionPane.showInputDialog("enter distance"));
+        gallons = Integer.parseInt(JOptionPane.showInputDialog("Enter gallons: -"));
+
+        while(distance >= 0){
+            outAverage =outAverage + (distance / (gallons * 1.0));
+            counter++;
+            distance = Integer.parseInt(JOptionPane.showInputDialog("enter distance"));
+            gallons = Integer.parseInt(JOptionPane.showInputDialog("Enter gallons: -"));
         }
+        if (counter > 0) {
+            average = outAverage / counter;
+        }
+    }
+
+    public double getAverage() {
+        return average;
     }
 }

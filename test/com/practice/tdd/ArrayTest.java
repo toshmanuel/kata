@@ -54,10 +54,10 @@ class ArrayTest {
     }
     @Test
     void testToGetTheLowestPossibleSumOfIntegersInAnArray(){
-        int[] arr = {10,10,10,10,10};
+        int[] arr = {0,16,1,31,10};
         array.calculateSum(arr);
         array.calculateLowestSum(arr);
-        assertEquals(40, array.getMinSum());
+        assertEquals(27, array.getMinSum());
         System.out.println(array.getMinSum());
     }
 

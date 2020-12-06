@@ -30,7 +30,6 @@ public class DaysOfChristmasSong {
                 case 6 -> {
                     day = "Sixth";
                     System.out.println("On the " + day + " of Christmas \nmy true love said to me:");
-
                 }
                 case 7 -> {
                     day = "Seventh";
@@ -55,7 +54,6 @@ public class DaysOfChristmasSong {
                 case 12 -> {
                     day = "Twelfth";
                     System.out.println("On the " + day + " of Christmas \nmy true love said to me:");
-
                 }
             } switch(days){
                 case 12:
@@ -84,11 +82,6 @@ public class DaysOfChristmasSong {
                     System.out.println("And a Partridge in a Pear Tree");
                     break;
             }
-
-
-
-
-
         }
     }
 }
