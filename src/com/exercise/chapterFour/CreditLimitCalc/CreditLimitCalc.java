@@ -3,7 +3,7 @@ package com.exercise.chapterFour.CreditLimitCalc;
 public class CreditLimitCalc {
     private String firstName;
     private String lastName;
-    private long accountNumber;
+private long accountNumber;
     private int accountBalance;
 
     public void setFirstName(String firstName) {
