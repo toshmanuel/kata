@@ -3,19 +3,19 @@ package com.exercise.chapterFour.HighestNumber;
 import javax.swing.*;
 
 public class HighestNumber {
+    int largest;
     int number;
-    int number1;
     int counter;
     int counterReader;
     public void rangeOfNumbers() {
 
         counter = 2;
         if (counterReader > 0) {
-            number = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + 1));
+            largest = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + 1));
             while (counter <= getCounterReader()) {
-                number1 = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + counter));
-                if (number1 > number) {
-                    number = number1;
+                number = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + counter));
+                if (number > largest) {
+                    largest = number;
                 }
                 counter++;
             }
@@ -23,7 +23,7 @@ public class HighestNumber {
     }
 
     public int getHighestEntry() {
-        return number;
+        return largest;
     }
 
     public void setCounterReader(int counterReader){
