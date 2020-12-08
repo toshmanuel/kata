@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +24,7 @@ class DiaryTest {
         int newDiary = diary.getNumberOfEntries();
         assertEquals(5, newDiary);
     }
-
+    @Test
     void testDiaryEntryIsSNotNull(){
         Diary diary = new Diary(10);
 
@@ -53,17 +54,36 @@ class DiaryTest {
         Entry entry = new Entry("My title");
         entry.setEntryBody("Life is good");
         //when
-        diary.addEntry(entry);
-        diary.addEntry(entry);
-        diary.addEntry(entry);
+//        diary.addEntry(entry);
+//        diary.addEntry(entry);
+//        diary.addEntry(entry);
 
         //assert
 //        assertEquals(entry, diary.getEntries());
         Entry[] assertionEntry = new Entry[5];
-        assertionEntry[0] = entry;
-        assertionEntry[1] = entry;
-        assertionEntry[2] = entry;
-        assertArrayEquals(assertionEntry, diary.getEntries());
+//        assertionEntry[0] = entry;
+//        assertionEntry[1] = entry;
+//        assertionEntry[2] = entry;
+//        assertArrayEquals(assertionEntry, diary.getEntries());
+        for (int i = 0; i < assertionEntry.length; i++) {
+            diary.addEntry(entry);
+            assertionEntry[i] = entry;
+            System.out.println(Arrays.toString(diary.getEntries()));
+        } assertArrayEquals(assertionEntry, diary.getEntries());
+    }
+    @Test
+    void testToCheckIfThatTheArrayLengthDoesNotExtendPassItLength(){
+        Diary diary = new Diary(5);
+        Entry entry = new Entry("My title");
+        entry.setEntryBody("Life is good");
+
+        Entry[] assertionEntry = new Entry[5];
+
+        for (int i = 0; i < assertionEntry.length; i++) {
+            diary.addEntry(entry);
+            assertionEntry[i = 1] = entry;
+            System.out.println(Arrays.toString(diary.getEntries()));
+        } assertArrayEquals(assertionEntry, diary.getEntries());
     }
 
 

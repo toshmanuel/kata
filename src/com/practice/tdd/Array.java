@@ -52,25 +52,28 @@ public class Array {
     public void calculateMaxSumOfArr(int[] arr) {
 
         min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-
-            if (min > arr[i]) {
-                min = arr[i];
-            }
-            maxSum = totalValue() - (min * 1.0);
-        }
+//        for (int i = 0; i < arr.length; i++) {
+//
+//            if (min > arr[i]) {
+//                min = arr[i];
+//            }
+//
+//        }
+//       minSum = totalValue() - (min * 1.0);
+        maxSum = totalValue() - getMin();
     }
     public double getMaxSum() {
         return maxSum;
     }
     public void calculateLowestSum(int[] arr){
         max = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (max < arr[i]){
-                max = arr[i];
-            }
-        }
-        minSum = totalValue() - (max * 1.0);
+//        for (int i = 0; i < arr.length; i++) {
+//            if (max < arr[i]){
+//                max = arr[i];
+//            }
+//        }
+//        minSum = totalValue() - (max * 1.0);
+        minSum = totalValue() - getMax();
     }
 
     public double getMinSum() {

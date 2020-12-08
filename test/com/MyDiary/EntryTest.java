@@ -15,7 +15,7 @@ class EntryTest {
 
     @BeforeEach
     void setUp() {
-//        entry = new Entry();
+        entry = new Entry("");
 
     }
 
@@ -26,9 +26,9 @@ class EntryTest {
     @Test
     void testThatDateExists(){
         //given
-        Entry entry;
+//        Entry entry;
         //when
-        entry = new Entry("My Title");
+        entry = new Entry("New Entry Title");
         //assert
         assertEquals("New Entry Title", entry.getEntryTitle());
     }

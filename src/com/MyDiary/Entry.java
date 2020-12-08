@@ -7,7 +7,7 @@ public class Entry {
 
     private String title;
 
-    private LocalDateTime localDateTime;
+    private final LocalDateTime localDateTime;
     private String body;
 
     public Entry(String title) {
@@ -15,9 +15,9 @@ public class Entry {
         localDateTime = LocalDateTime.now();
     }
 
-    public void setEntryTitle(String title) {
-        this.title = title;
-    }
+//    public void setEntryTitle(String title) {
+//        this.title = title;
+//    }
 
     public String getEntryTitle() {
         return title;
