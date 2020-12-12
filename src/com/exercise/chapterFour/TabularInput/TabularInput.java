@@ -35,7 +35,7 @@ public class TabularInput {
     public void setCounterTimesThousand() {
         counter = 0;
         while (counter < 5){
-            System.out.println(number * 1000);
+            System.out.print(number * 1000);
             counter++;
             number++;
         }

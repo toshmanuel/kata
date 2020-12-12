@@ -9,15 +9,14 @@ public class HighestNumber {
     int counterReader;
     public void rangeOfNumbers() {
 
-        counter = 2;
-        if (counterReader > 0) {
-            largest = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + 1));
-            while (counter <= getCounterReader()) {
-                number = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + counter));
+        if (getCounterReader() > 0) {
+            counter = 1;
+            largest = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + counter));
+            while (counter < getCounterReader()) {
+                number = Integer.parseInt(JOptionPane.showInputDialog("Enter input" + ++counter));
                 if (number > largest) {
                     largest = number;
                 }
-                counter++;
             }
         }
     }
