@@ -18,7 +18,7 @@ public class SidesOfATriangle {
         return firstSide;
     }
     public void setSecondSide(){
-        int secondSide = Integer.parseInt(JOptionPane.showInputDialog("Enter first side of the triangle"));
+        int secondSide = Integer.parseInt(JOptionPane.showInputDialog("Enter second side of the triangle"));
         if (secondSide > 0){
             this.secondSide = secondSide;
         }
@@ -28,7 +28,7 @@ public class SidesOfATriangle {
     }
 
     public void setThirdSide() {
-        int thirdSide = Integer.parseInt(JOptionPane.showInputDialog("Enter first side of the triangle"));
+        int thirdSide = Integer.parseInt(JOptionPane.showInputDialog("Enter third side of the triangle"));
         if (thirdSide > 0){
             this.thirdSide = thirdSide;
         }
