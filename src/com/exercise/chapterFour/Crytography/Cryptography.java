@@ -46,26 +46,10 @@ public class Cryptography {
         return thirdDigit+ "" +fourthDigit+ "" +firstDigit+ "" +secondDigit ;
     }
     public String getDecryptedPin(){
-        if (firstDigit > 7){
-            firstDigit = firstDigit - 7;
-        }else{
-            firstDigit = (firstDigit + 10 - 7);
-        }
-        if (secondDigit > 7){
-            secondDigit = secondDigit - 7;
-        }else{
-            secondDigit = (secondDigit + 10 - 7);
-        }
-        if (thirdDigit > 7){
-            thirdDigit = thirdDigit - 7;
-        }else{
-            thirdDigit = (thirdDigit + 10 - 7);
-        }
-        if (fourthDigit > 7){
-            fourthDigit = fourthDigit - 7;
-        }else{
-            fourthDigit = (fourthDigit + 10 - 7);
-        }
+       firstDigit = (firstDigit + 3) % 10;
+       secondDigit = (secondDigit + 3) % 10;
+       thirdDigit = (thirdDigit + 3) % 10;
+       fourthDigit = (fourthDigit + 3) % 10;
         return firstDigit+ "" +secondDigit+ "" +thirdDigit+ "" +fourthDigit ;
     }
 }
