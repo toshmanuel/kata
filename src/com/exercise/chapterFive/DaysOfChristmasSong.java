@@ -69,7 +69,7 @@ public class DaysOfChristmasSong {
                 case 7:
                     System.out.println("Seven Swans a Swimming");
                 case 6:
-                System.out.println("Six Geese a Laying");
+                    System.out.println("Six Geese a Laying");
                 case 5:
                     System.out.println("Five Golden Rings");
                 case 4:
