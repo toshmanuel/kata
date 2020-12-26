@@ -23,33 +23,35 @@ public class Cryptography {
     }
 
     public String getEncryptedPin() {
-        int newPin = getPin();
+        int newPin;
+        if (getPin() > 0) {
+            newPin = getPin();
 
-        int fourthDigit = newPin % 10;
-        fourthDigit = (fourthDigit + 7) % 10;
-        this.fourthDigit = fourthDigit;
+            int fourthDigit = newPin % 10;
+            fourthDigit = (fourthDigit + 7) % 10;
+            this.fourthDigit = fourthDigit;
 
-        newPin = newPin / 10;
-        int thirdDigit = newPin % 10;
-        thirdDigit = (thirdDigit + 7) % 10;
-        this.thirdDigit = thirdDigit;
+            newPin = newPin / 10;
+            int thirdDigit = newPin % 10;
+            thirdDigit = (thirdDigit + 7) % 10;
+            this.thirdDigit = thirdDigit;
 
-        newPin = newPin / 10;
-        int secondDigit = newPin % 10;
-        secondDigit = (secondDigit + 7) % 10;
-        this.secondDigit = secondDigit;
+            newPin = newPin / 10;
+            int secondDigit = newPin % 10;
+            secondDigit = (secondDigit + 7) % 10;
+            this.secondDigit = secondDigit;
 
-        newPin = newPin / 10;
-        int firstDigit = (newPin + 7) % 10;
-        this.firstDigit = firstDigit;
-
+            newPin = newPin / 10;
+            this.firstDigit = (newPin + 7) % 10;
+        }
         return thirdDigit+ "" +fourthDigit+ "" +firstDigit+ "" +secondDigit ;
     }
     public String getDecryptedPin(){
-       firstDigit = (firstDigit + 3) % 10;
-       secondDigit = (secondDigit + 3) % 10;
-       thirdDigit = (thirdDigit + 3) % 10;
-       fourthDigit = (fourthDigit + 3) % 10;
-        return firstDigit+ "" +secondDigit+ "" +thirdDigit+ "" +fourthDigit ;
+        if(getPin() > 0) {
+            firstDigit = (firstDigit + 3) % 10;
+            secondDigit = (secondDigit + 3) % 10;
+            thirdDigit = (thirdDigit + 3) % 10;
+            fourthDigit = (fourthDigit + 3) % 10;
+        }return firstDigit + "" + secondDigit + "" + thirdDigit + "" + fourthDigit;
     }
 }
