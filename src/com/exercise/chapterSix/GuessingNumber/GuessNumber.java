@@ -9,7 +9,7 @@ public class GuessNumber {
         SecureRandom random = new SecureRandom();
 
         randomNumber = 1 + random.nextInt(1000);
-        System.out.println(randomNumber);
+//        System.out.println(randomNumber);
     }
 
     public int getGuessedNumber() {
