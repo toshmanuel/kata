@@ -64,11 +64,3 @@ public class Exercise7_8 {
 
     }
 }
-
-
-//    Write Java statements to accomplish each of the following tasks:
-//        a) Display the value of element 6 of array f.
-//        b) Initialize each of the five elements of one-dimensional integer array g to 8.
-//        c) Total the 100 elements of floating-point array c.
-//        d) Copy 11-element array a into the first portion of array b, which contains 34 elements.
-//        e) Determine and display the smallest and largest values contained in 99-element floating-point array w.
