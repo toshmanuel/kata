@@ -1,4 +1,4 @@
-package com.exercise.Seven.ChapterPractice;
+package com.exercise.chapterSeven.ChapterPractice;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

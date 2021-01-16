@@ -1,4 +1,4 @@
-package com.exercise.Seven.ChapterPractice;
+package com.exercise.chapterSeven.ChapterPractice;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
