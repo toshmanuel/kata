@@ -3,19 +3,15 @@ package com.exercise.chapterSeven.SalesCommission;
 public class SalesCommission {
     private int commission;
     private int arrayLength;
+    private int arrayContent;
 
     private double getCommissionPercent() {
         return 0.09;
     }
 
     private void calculateIndividualCommission(int individualSale) {
-        commission = (int) (getCommissionPercent() * individualSale);
-    }
-
-    public void calculateCommission(int[] sales) {
-        for (int counter = 0; counter < sales.length; counter++) {
-            calculateIndividualCommission(sales[counter]);
-            sales[counter] = commission;
+        if (individualSale > 0) {
+            commission = (int) (getCommissionPercent() * individualSale);
         }
     }
 
@@ -26,7 +22,7 @@ public class SalesCommission {
     }
 
     public void calculateWages(int[] sales) {
-        for (int counter = 0; counter < sales.length; counter++) {
+        for (int counter = 0; counter < getArrayLength(); counter++) {
             int wage = calculateWage(sales[counter]);
             sales[counter] = wage;
         }
@@ -37,7 +33,7 @@ public class SalesCommission {
     }
 
     public void insertFrequencies(int[] frequency, int[] sales) {
-        for (int counter = 0; counter < sales.length; counter++) {
+        for (int counter = 0; counter < getArrayLength(); counter++) {
             int wage = calculateWage(sales[counter]);
             sales[counter] = wage;
             int wageCase = determineFrequenciesCase(sales[counter]);
@@ -62,6 +58,14 @@ public class SalesCommission {
 
     public int getArrayLength(){
         return arrayLength;
+    }
+
+    public void setArrayContent(int arrayContent){
+        this.arrayContent = arrayContent;
+    }
+
+    public int getArrayContent(){
+        return arrayContent;
     }
 }
 
