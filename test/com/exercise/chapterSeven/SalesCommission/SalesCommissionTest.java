@@ -20,6 +20,17 @@ class SalesCommissionTest {
     }
 
     @Test
+    void testToDetermineArrayLength(){
+        salesCommission.setArrayLength(12);
+        assertEquals(12, salesCommission.getArrayLength());
+    }
+
+    @Test
+    void testToConfirmIfArrayLengthCannotBeANegativeValue(){
+        salesCommission.setArrayLength(-12);
+        assertNotEquals(-12, salesCommission.getArrayLength());
+    }
+    @Test
     void testDetermineCommission(){
         int[] sales = {1000, 12000, 1000, 101001};
         salesCommission.calculateCommission(sales);

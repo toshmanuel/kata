@@ -2,6 +2,7 @@ package com.exercise.chapterSeven.SalesCommission;
 
 public class SalesCommission {
     private int commission;
+    private int arrayLength;
 
     private double getCommissionPercent() {
         return 0.09;
@@ -52,6 +53,15 @@ public class SalesCommission {
                 default -> ++frequency[8];
             }
         }
+    }
+    public void setArrayLength(int arrayLength){
+        if(arrayLength > 0) {
+            this.arrayLength = arrayLength;
+        }
+    }
+
+    public int getArrayLength(){
+        return arrayLength;
     }
 }
 
