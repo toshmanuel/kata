@@ -72,11 +72,10 @@ class TurtleTest {
     @Test
     void turtle_canMoveEastWard_onASketchPad(){
         turtle.setCurrentDirection(CurrentDirection.EAST);
+        turtle.getPen().setPenOrientation(PenOrientation.PEN_UP);
         SketchPad sketchPad = new SketchPad();
-        turtle.move(5);
-
-
-
-
+        turtle.setCurrentPosition(new Position(0, 0));
+        turtle.move(sketchPad, 5);
+        assertEquals(new Position(0, 5), turtle.getCurrentPosition());
     }
 }

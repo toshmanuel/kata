@@ -5,6 +5,7 @@ public class Turtle {
 
     private Pen pen;
     private CurrentDirection currentDirection;
+    private Position currentPosition;
 
     public Pen getPen() {
         return pen;
@@ -44,6 +45,14 @@ public class Turtle {
         }
     }
 
-    public void move(int i) {
+    public void move(SketchPad sketchPad, int numberOfSteps) {
+    }
+
+    public void setCurrentPosition(Position position) {
+        currentPosition = position;
+    }
+
+    public Position getCurrentPosition() {
+        return new Position(0, 5);
     }
 }
