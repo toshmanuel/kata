@@ -46,6 +46,20 @@ public class Turtle {
     }
 
     public void move(SketchPad sketchPad, int numberOfSteps) {
+        numberOfSteps -= 1;
+        Position currentPosition = getCurrentPosition();
+        int currentRow = getCurrentPosition().getRowPosition();
+        int currentColumn = getCurrentPosition().getColumnPosition();
+        switch(currentDirection){
+            case EAST ->
+                currentPosition.setColumnPosition((currentColumn+numberOfSteps));
+            case SOUTH ->
+                    currentPosition.setRowPosition((currentRow+numberOfSteps));
+            case NORTH ->
+                    currentPosition.setRowPosition((currentRow-numberOfSteps));
+            case WEST ->
+                    currentPosition.setColumnPosition((currentColumn-numberOfSteps));
+        }
     }
 
     public void setCurrentPosition(Position position) {
@@ -53,6 +67,6 @@ public class Turtle {
     }
 
     public Position getCurrentPosition() {
-        return new Position(0, 5);
+        return currentPosition;
     }
 }

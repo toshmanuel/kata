@@ -4,7 +4,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.net.HttpURLConnection;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -77,5 +76,55 @@ class TurtleTest {
         turtle.setCurrentPosition(new Position(0, 0));
         turtle.move(sketchPad, 5);
         assertEquals(new Position(0, 5), turtle.getCurrentPosition());
+
+        turtle.move(sketchPad, 2);
+        assertEquals(new Position(0, 7), turtle.getCurrentPosition());
+    }
+
+    @Test
+    void turtle_canMoveSouthWard_onASketchPad(){
+        turtle.setCurrentDirection(CurrentDirection.SOUTH);
+        turtle.getPen().setPenOrientation(PenOrientation.PEN_UP);
+        SketchPad sketchPad = new SketchPad();
+        turtle.setCurrentPosition(new Position(0, 0));
+        turtle.move(sketchPad, 5);
+        assertEquals(new Position(5, 0), turtle.getCurrentPosition());
+
+        turtle.move(sketchPad, 2);
+        assertEquals(new Position(7, 0), turtle.getCurrentPosition());
+    }
+
+    @Test
+    void turtle_canMoveNorthWard_onASketchPad(){
+        turtle.setCurrentDirection(CurrentDirection.NORTH);
+        turtle.getPen().setPenOrientation(PenOrientation.PEN_UP);
+        SketchPad sketchPad = new SketchPad();
+        turtle.setCurrentPosition(new Position(7, 0));
+        turtle.move(sketchPad, 5);
+        assertEquals(new Position(2, 0), turtle.getCurrentPosition());
+
+        turtle.move(sketchPad, 2);
+        assertEquals(new Position(0, 0), turtle.getCurrentPosition());
+    }
+
+    @Test
+    void turtle_canMoveWestWard_onASketchPad(){
+        turtle.setCurrentDirection(CurrentDirection.WEST);
+        turtle.getPen().setPenOrientation(PenOrientation.PEN_UP);
+        SketchPad sketchPad = new SketchPad();
+        turtle.setCurrentPosition(new Position(0, 7));
+        turtle.move(sketchPad, 5);
+        assertEquals(new Position(0, 2), turtle.getCurrentPosition());
+
+        turtle.move(sketchPad, 2);
+        assertEquals(new Position(0, 0), turtle.getCurrentPosition());
+    }
+
+    @Test
+    void turtle_canWriteOnSketchPad_whileFacingEast(){
+        turtle.setCurrentDirection(CurrentDirection.NORTH);
+        turtle.getPen().setPenOrientation(PenOrientation.PEN_UP);
+        SketchPad sketchPad = new SketchPad();
+        turtle.move(sketchPad, 5);
     }
 }
