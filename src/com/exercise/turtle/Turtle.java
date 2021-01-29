@@ -58,11 +58,8 @@ public class Turtle {
                 int[][] floor = sketchPad.getFloor();
                 int positionAfterLoop = currentColumn + numberOfSteps;
                 switch(currentDirection){
-                    case EAST -> {
-                        for (int start = currentColumn; start <= numberOfSteps + currentColumn; start++){
-                            floor[currentRow][start] = 1;
-                        }currentPosition.setColumnPosition(positionAfterLoop);
-                    }
+                    case EAST ->
+                        moveHorizontally(sketchPad, numberOfSteps);
                     case SOUTH -> {
                         for (int start = currentRow; start <= numberOfSteps + currentRow; start++){
                             floor[start][currentColumn] = 1;
@@ -82,6 +79,18 @@ public class Turtle {
             }
         }
 
+    }
+
+    private void moveHorizontally(SketchPad sketchPad, int numberOfSteps) {
+        Position currentPosition = getCurrentPosition();
+        int currentRow = getCurrentPosition().getRowPosition();
+        int currentColumn = getCurrentPosition().getColumnPosition();
+        int[][] floor = sketchPad.getFloor();
+        int positionAfterLoop = currentColumn + numberOfSteps;
+        for (int start = currentColumn; start <= numberOfSteps + currentColumn; start++){
+            floor[currentRow][start] = 1;
+        }
+        currentPosition.setColumnPosition(positionAfterLoop);
     }
 
     private void moveWithPenUp(int numberOfSteps) {
