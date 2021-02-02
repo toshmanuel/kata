@@ -6,7 +6,7 @@ public class Separator {
     private byte remainder;
 
     public void setInput(int input) {
-        if(input > 0 && input < 99999){
+        if(input > 0 && input <= 99999){
             this.input = input;
         }else
             System.out.println("Enter valid input: value from 1 - 99999");

@@ -8,12 +8,11 @@ public class SeparatorMainTest {
         Separator digits = new Separator();
         System.out.println("Enter Digit (between 1 - 99999)");
         int input = scanner.nextInt();
-        digits.setInput(input);
-        digits.displayDigits(digits.getInput());
-
-        System.out.println("Enter Digit (between 1 - 99999)");
-        int input2 = scanner.nextInt();
-        digits.setInput(input2);
-        digits.displayDigits(digits.getInput());
+        while (input != -1) {
+            digits.setInput(input);
+            digits.displayDigits(digits.getInput());
+            System.out.println("Enter Digit (between 1 - 99999)");
+            input = scanner.nextInt();
+        }
     }
 }
