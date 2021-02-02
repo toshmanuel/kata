@@ -24,11 +24,10 @@ public class Card {
 
     public boolean isVisa(long cardNumber) {
         int firstDigit = getFirstDigit(cardNumber);
-        if (cardLength == 16 && firstDigit == 4){
+        if (cardLength == 16 && firstDigit == 4) {
             checkDigitStatus(evenAddition, oddAddition, cardNumber);
             validCardNumber(evenAddition, oddAddition);
-        }else
-            isValid = false;
+        }
         return isValid;
     }
 
@@ -36,9 +35,8 @@ public class Card {
         int firstDigit = getFirstDigit(cardNumber);
         if (cardLength == 16 && firstDigit == 5){
             checkDigitStatus(evenAddition, oddAddition, cardNumber);
+            validCardNumber(evenAddition, oddAddition);
         }
-
-        validCardNumber(evenAddition, oddAddition);
         return isValid;
     }
 
@@ -46,19 +44,19 @@ public class Card {
         int firstDigit = getFirstDigit(cardNumber);
         if (cardLength == 16 && firstDigit == 6){
             checkDigitStatus(evenAddition, oddAddition, cardNumber);
+            validCardNumber(evenAddition, oddAddition);
         }
 
-        validCardNumber(evenAddition, oddAddition);
+
         return isValid;
     }
 
     public boolean isAmericanExpressCard(long cardNumber){
         int firstDigit = getFirstTwoDigit(cardNumber);
-        if (cardLength == 16 && firstDigit == 5){
+        if (cardLength == 15 && firstDigit == 37){
             checkDigitStatus(evenAddition, oddAddition, cardNumber);
+            validCardNumber(evenAddition, oddAddition);
         }
-
-        validCardNumber(evenAddition, oddAddition);
         return isValid;
     }
 

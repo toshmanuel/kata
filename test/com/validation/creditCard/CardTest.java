@@ -28,7 +28,7 @@ class CardTest {
 
     @Test
     void checkIfCreditCardIsVisa(){
-        long cardNumber = 0;
+        long cardNumber = 4388576018410707L;
         card.checkCardLength(cardNumber);
         boolean isVisaCard = card.isVisa(cardNumber);
         assertTrue(isVisaCard);
@@ -36,7 +36,7 @@ class CardTest {
 
     @Test
     void checkIfCreditCardIsMaster(){
-        long cardNumber = 0;
+        long cardNumber = 5399431232469218L;
         card.checkCardLength(cardNumber);
         boolean isMasterCard = card.isMasterCard(cardNumber);
         assertTrue(isMasterCard);
@@ -44,7 +44,7 @@ class CardTest {
 
     @Test
     void checkIfCreditCardIsDiscover(){
-        long cardNumber = 0;
+        long cardNumber = 6199431232469218L;
         card.checkCardLength(cardNumber);
         boolean isDiscoverCard = card.isDiscoverCard(cardNumber);
         assertTrue(isDiscoverCard);
@@ -52,7 +52,7 @@ class CardTest {
 
     @Test
     void checkIfCreditCardIsAmericanExpress(){
-        long cardNumber = 0;
+        long cardNumber = 379431232469213L;
         card.checkCardLength(cardNumber);
         boolean isAmericanExpressCard = card.isAmericanExpressCard(cardNumber);
         assertTrue(isAmericanExpressCard);
