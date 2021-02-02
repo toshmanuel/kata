@@ -25,7 +25,7 @@ public class Card {
     public boolean isVisa(long cardNumber) {
         int firstDigit = getFirstDigit(cardNumber);
         if (cardLength == 16 && firstDigit == 4){
-            extracted(evenAddition, oddAddition, cardNumber);
+            checkDigitStatus(evenAddition, oddAddition, cardNumber);
             validCardNumber(evenAddition, oddAddition);
         }else
             isValid = false;
@@ -35,7 +35,7 @@ public class Card {
     public boolean isMasterCard(long cardNumber){
         int firstDigit = getFirstDigit(cardNumber);
         if (cardLength == 16 && firstDigit == 5){
-            extracted(evenAddition, oddAddition, cardNumber);
+            checkDigitStatus(evenAddition, oddAddition, cardNumber);
         }
 
         validCardNumber(evenAddition, oddAddition);
@@ -45,7 +45,7 @@ public class Card {
     public boolean isDiscoverCard(long cardNumber){
         int firstDigit = getFirstDigit(cardNumber);
         if (cardLength == 16 && firstDigit == 6){
-            extracted(evenAddition, oddAddition, cardNumber);
+            checkDigitStatus(evenAddition, oddAddition, cardNumber);
         }
 
         validCardNumber(evenAddition, oddAddition);
@@ -55,7 +55,7 @@ public class Card {
     public boolean isAmericanExpressCard(long cardNumber){
         int firstDigit = getFirstTwoDigit(cardNumber);
         if (cardLength == 16 && firstDigit == 5){
-            extracted(evenAddition, oddAddition, cardNumber);
+            checkDigitStatus(evenAddition, oddAddition, cardNumber);
         }
 
         validCardNumber(evenAddition, oddAddition);
@@ -91,7 +91,7 @@ public class Card {
         return digits;
     }
 
-    private void extracted(int evenAddition, int oddAddition, long cardNumber) {
+    private void checkDigitStatus(int evenAddition, int oddAddition, long cardNumber) {
         for (long counter = 1; counter <= cardLength; counter++){
             int digits = (int) (cardNumber % 10);
             cardNumber = cardNumber / 10;
