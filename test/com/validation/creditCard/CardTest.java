@@ -41,4 +41,20 @@ class CardTest {
         boolean isMasterCard = card.isMasterCard(cardNumber);
         assertTrue(isMasterCard);
     }
+
+    @Test
+    void checkIfCreditCardIsDiscover(){
+        long cardNumber = 0;
+        card.checkCardLength(cardNumber);
+        boolean isDiscoverCard = card.isDiscoverCard(cardNumber);
+        assertTrue(isDiscoverCard);
+    }
+
+    @Test
+    void checkIfCreditCardIsAmericanExpress(){
+        long cardNumber = 0;
+        card.checkCardLength(cardNumber);
+        boolean isAmericanExpressCard = card.isAmericanExpressCard(cardNumber);
+        assertTrue(isAmericanExpressCard);
+    }
 }

@@ -42,6 +42,26 @@ public class Card {
         return isValid;
     }
 
+    public boolean isDiscoverCard(long cardNumber){
+        int firstDigit = getFirstDigit(cardNumber);
+        if (cardLength == 16 && firstDigit == 6){
+            extracted(evenAddition, oddAddition, cardNumber);
+        }
+
+        validCardNumber(evenAddition, oddAddition);
+        return isValid;
+    }
+
+    public boolean isAmericanExpressCard(long cardNumber){
+        int firstDigit = getFirstTwoDigit(cardNumber);
+        if (cardLength == 16 && firstDigit == 5){
+            extracted(evenAddition, oddAddition, cardNumber);
+        }
+
+        validCardNumber(evenAddition, oddAddition);
+        return isValid;
+    }
+
     private void validCardNumber(int evenAddition, int oddAddition) {
         this.evenAddition = evenAddition;
         this.oddAddition = oddAddition;
@@ -50,6 +70,10 @@ public class Card {
 
     private int getFirstDigit(long cardNumber) {
         return (int) (cardNumber / 1000000000000000L);
+    }
+
+    private int getFirstTwoDigit(long cardNumber) {
+        return (int) (cardNumber / 10000000000000L);
     }
 
     private int getEvenAddition(int digits) {
