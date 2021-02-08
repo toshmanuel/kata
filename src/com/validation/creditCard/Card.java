@@ -2,7 +2,6 @@ package com.validation.creditCard;
 
 public class Card {
     private int cardLength;
-    private long cardNumber;
     boolean isValid;
     private int evenAddition;
     private int oddAddition;
