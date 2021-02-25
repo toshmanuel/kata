@@ -1,10 +1,10 @@
 package com.exercise.chapterSeven.Duplicate_elimination;
 
-import java.util.Arrays;
 
 public class DuplicateElimination {
     private int input;
     private int[] newInput;
+    private int numberOfUniqueDigits = 1;
 
     public DuplicateElimination() {
     }
@@ -21,16 +21,15 @@ public class DuplicateElimination {
     }
 
     public void checkForDuplicate(int[] inputs) {
-        Arrays.sort(inputs);
-        for(int counter = 0; counter < inputs.length; counter++){
-            for(int count = 0; count < counter; count++){
-                if(inputs[counter] == inputs[count]){
-                    inputs[count] = inputs[counter];
+        for (int content : inputs) {
+            for (int counter : inputs) {
+                if (content != counter) {
+                    numberOfUniqueDigits++;
                 }
             }
-            newInput[counter] = inputs[counter];
-            System.out.println(newInput.length);
         }
+        numberOfUniqueDigits = numberOfUniqueDigits / (inputs.length - 1);
+        newInput = new int[numberOfUniqueDigits];
     }
 
 }

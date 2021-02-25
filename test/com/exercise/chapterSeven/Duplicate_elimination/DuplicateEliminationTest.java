@@ -40,13 +40,15 @@ class DuplicateEliminationTest {
         int thirdInput = 47;
         duplicate.setInput(thirdInput);
         int fourthInput = 25;
-
         duplicate.setInput(fourthInput);
-        int[] inputs = {firstInput, secondInput, thirdInput, fourthInput};
+        int fifthInput = 75;
+
+        duplicate.setInput(fifthInput);
+        int[] inputs = {firstInput, secondInput, thirdInput, fourthInput, fifthInput};
 
         duplicate.checkForDuplicate(inputs);
 
-        assertEquals(4, inputs.length);
+        assertEquals(5, inputs.length);
     }
 }
 
