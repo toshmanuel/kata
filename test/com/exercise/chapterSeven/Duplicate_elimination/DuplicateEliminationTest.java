@@ -32,23 +32,45 @@ class DuplicateEliminationTest {
     }
 
     @Test
-    void testToPassInputIntoAnArray(){
+    void testToCheckTheLengthOfTheNewArrayAfterRemovingRepeatedCodes(){
+        int firstInput = 25;
+        duplicate.setInput(firstInput);
+        int secondInput = 56;
+        duplicate.setInput(secondInput);
+        int thirdInput = 47;
+        duplicate.setInput(secondInput);
+        int thirdInput2 = 47;
+        duplicate.setInput(thirdInput);
+        int fourthInput = 25;
+        duplicate.setInput(fourthInput);
+        int fifthInput = 75;
+        duplicate.setInput(fifthInput);
+
+        int[] inputs = {firstInput, secondInput, thirdInput, fourthInput, fifthInput, thirdInput2};
+
+        duplicate.createNewArray(inputs);
+        assertEquals(4, duplicate.getNumberOfUniqueElements());
+    }
+
+    @Test
+    void testToCheckTheContentOfTheNewArray(){
         int firstInput = 25;
         duplicate.setInput(firstInput);
         int secondInput = 56;
         duplicate.setInput(secondInput);
         int thirdInput = 47;
         duplicate.setInput(thirdInput);
+        int thirdInput2 = 47;
+        duplicate.setInput(thirdInput2);
         int fourthInput = 25;
         duplicate.setInput(fourthInput);
         int fifthInput = 75;
-
         duplicate.setInput(fifthInput);
-        int[] inputs = {firstInput, secondInput, thirdInput, fourthInput, fifthInput};
 
-        duplicate.checkForDuplicate(inputs);
+        int[] inputs = {firstInput, secondInput, thirdInput, fourthInput, fifthInput, thirdInput2};
 
-        assertEquals(5, inputs.length);
+        duplicate.createNewArray(inputs);
+        assertArrayEquals(new int[]{25, 47, 56, 75}, duplicate.getNewInput());
     }
 }
 
