@@ -44,10 +44,11 @@ public class DuplicateElimination {
          }
          int[] newArr = new int[numberOfUniqueDigits];
 
-        for(int index = 0; index < numberOfUniqueDigits -1; index++){
-
+        for(int index = 0; index < getNewInput().length -1; index++){
+            if(getNewInput()[index] != 0){
                 newArr[index] = getNewInput()[index];
-                   }
+            }
+        }
         System.out.println(Arrays.toString(newArr));
         newInput = newArr;
         System.out.println(Arrays.toString(newInput));
